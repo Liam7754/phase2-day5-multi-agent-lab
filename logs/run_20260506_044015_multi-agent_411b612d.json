@@ -1,0 +1,418 @@
+{
+  "run_id": "411b612d",
+  "mode": "multi-agent",
+  "query": "Research GraphRAG",
+  "started_at": "2026-05-06T04:40:15.542216+00:00",
+  "ended_at": "2026-05-06T04:40:16.461682+00:00",
+  "total_duration_ms": 919.47,
+  "summary": {
+    "total_agents_invoked": 9,
+    "agent_sequence": [
+      "supervisor",
+      "researcher",
+      "supervisor",
+      "analyst",
+      "supervisor",
+      "writer",
+      "supervisor",
+      "critic",
+      "supervisor"
+    ],
+    "total_llm_calls": 9,
+    "total_input_tokens": 3644,
+    "total_output_tokens": 1062,
+    "total_tokens": 4706,
+    "total_cost_usd": 0.0011838,
+    "total_search_calls": 0,
+    "total_sources_found": 0,
+    "iterations": 5,
+    "has_final_answer": true,
+    "error_count": 0
+  },
+  "agent_timeline": [
+    {
+      "agent": "supervisor",
+      "started_at": "2026-05-06T04:40:15.547232+00:00",
+      "ended_at": "2026-05-06T04:40:15.651901+00:00",
+      "duration_ms": 104.67,
+      "input_tokens": 165,
+      "output_tokens": 2,
+      "cost_usd": 2.595e-05,
+      "status": "success",
+      "details": {
+        "agent": "supervisor",
+        "iteration": 1
+      }
+    },
+    {
+      "agent": "researcher",
+      "started_at": "2026-05-06T04:40:15.652910+00:00",
+      "ended_at": "2026-05-06T04:40:15.766760+00:00",
+      "duration_ms": 113.85,
+      "input_tokens": 445,
+      "output_tokens": 286,
+      "cost_usd": 0.00023835,
+      "status": "success",
+      "details": {
+        "agent": "researcher",
+        "iteration": 1
+      }
+    },
+    {
+      "agent": "supervisor",
+      "started_at": "2026-05-06T04:40:15.766760+00:00",
+      "ended_at": "2026-05-06T04:40:15.912643+00:00",
+      "duration_ms": 145.88,
+      "input_tokens": 172,
+      "output_tokens": 1,
+      "cost_usd": 2.64e-05,
+      "status": "success",
+      "details": {
+        "agent": "supervisor",
+        "iteration": 2
+      }
+    },
+    {
+      "agent": "analyst",
+      "started_at": "2026-05-06T04:40:15.913715+00:00",
+      "ended_at": "2026-05-06T04:40:16.011576+00:00",
+      "duration_ms": 97.86,
+      "input_tokens": 711,
+      "output_tokens": 214,
+      "cost_usd": 0.00023505,
+      "status": "success",
+      "details": {
+        "agent": "analyst",
+        "iteration": 2
+      }
+    },
+    {
+      "agent": "supervisor",
+      "started_at": "2026-05-06T04:40:16.011576+00:00",
+      "ended_at": "2026-05-06T04:40:16.119076+00:00",
+      "duration_ms": 107.5,
+      "input_tokens": 179,
+      "output_tokens": 1,
+      "cost_usd": 2.745e-05,
+      "status": "success",
+      "details": {
+        "agent": "supervisor",
+        "iteration": 3
+      }
+    },
+    {
+      "agent": "writer",
+      "started_at": "2026-05-06T04:40:16.120096+00:00",
+      "ended_at": "2026-05-06T04:40:16.200177+00:00",
+      "duration_ms": 80.08,
+      "input_tokens": 778,
+      "output_tokens": 214,
+      "cost_usd": 0.0002451,
+      "status": "success",
+      "details": {
+        "agent": "writer",
+        "iteration": 3
+      }
+    },
+    {
+      "agent": "supervisor",
+      "started_at": "2026-05-06T04:40:16.201251+00:00",
+      "ended_at": "2026-05-06T04:40:16.253930+00:00",
+      "duration_ms": 52.68,
+      "input_tokens": 185,
+      "output_tokens": 1,
+      "cost_usd": 2.835e-05,
+      "status": "success",
+      "details": {
+        "agent": "supervisor",
+        "iteration": 4
+      }
+    },
+    {
+      "agent": "critic",
+      "started_at": "2026-05-06T04:40:16.253930+00:00",
+      "ended_at": "2026-05-06T04:40:16.390752+00:00",
+      "duration_ms": 136.82,
+      "input_tokens": 822,
+      "output_tokens": 342,
+      "cost_usd": 0.0003285,
+      "status": "success",
+      "details": {
+        "agent": "critic",
+        "iteration": 4
+      }
+    },
+    {
+      "agent": "supervisor",
+      "started_at": "2026-05-06T04:40:16.391716+00:00",
+      "ended_at": "2026-05-06T04:40:16.460672+00:00",
+      "duration_ms": 68.96,
+      "input_tokens": 187,
+      "output_tokens": 1,
+      "cost_usd": 2.865e-05,
+      "status": "success",
+      "details": {
+        "agent": "supervisor",
+        "iteration": 5
+      }
+    }
+  ],
+  "route_history": [
+    "researcher",
+    "analyst",
+    "writer",
+    "critic",
+    "done"
+  ],
+  "trace_events": [
+    {
+      "name": "workflow_start",
+      "payload": {
+        "query": "Research GraphRAG",
+        "max_iterations": 6,
+        "timeout_seconds": 60,
+        "graph": {
+          "nodes": [
+            "supervisor",
+            "researcher",
+            "analyst",
+            "writer",
+            "critic"
+          ],
+          "edges": [
+            {
+              "from": "supervisor",
+              "to": "researcher",
+              "condition": "no research_notes"
+            },
+            {
+              "from": "supervisor",
+              "to": "analyst",
+              "condition": "no analysis_notes"
+            },
+            {
+              "from": "supervisor",
+              "to": "writer",
+              "condition": "no final_answer"
+            },
+            {
+              "from": "supervisor",
+              "to": "critic",
+              "condition": "has final_answer, not reviewed"
+            },
+            {
+              "from": "supervisor",
+              "to": "done",
+              "condition": "all complete or max iterations"
+            },
+            {
+              "from": "researcher",
+              "to": "supervisor",
+              "condition": "always"
+            },
+            {
+              "from": "analyst",
+              "to": "supervisor",
+              "condition": "always"
+            },
+            {
+              "from": "writer",
+              "to": "supervisor",
+              "condition": "always"
+            },
+            {
+              "from": "critic",
+              "to": "supervisor",
+              "condition": "always"
+            }
+          ],
+          "entry_point": "supervisor",
+          "stop_condition": "route == 'done' or iteration >= max_iterations"
+        }
+      }
+    },
+    {
+      "name": "supervisor",
+      "payload": {
+        "decision": "researcher",
+        "raw_llm_response": "researcher",
+        "iteration": 1,
+        "input_tokens": 165,
+        "output_tokens": 2,
+        "cost_usd": 2.5949999999999997e-05
+      }
+    },
+    {
+      "name": "researcher",
+      "payload": {
+        "sources_found": 5,
+        "notes_length": 1147,
+        "input_tokens": 445,
+        "output_tokens": 286,
+        "cost_usd": 0.00023834999999999997
+      }
+    },
+    {
+      "name": "supervisor",
+      "payload": {
+        "decision": "analyst",
+        "raw_llm_response": "analyst",
+        "iteration": 2,
+        "input_tokens": 172,
+        "output_tokens": 1,
+        "cost_usd": 2.6399999999999998e-05
+      }
+    },
+    {
+      "name": "analyst",
+      "payload": {
+        "analysis_length": 859,
+        "had_research_notes": true,
+        "source_count": 5,
+        "input_tokens": 711,
+        "output_tokens": 214,
+        "cost_usd": 0.00023504999999999997
+      }
+    },
+    {
+      "name": "supervisor",
+      "payload": {
+        "decision": "writer",
+        "raw_llm_response": "writer",
+        "iteration": 3,
+        "input_tokens": 179,
+        "output_tokens": 1,
+        "cost_usd": 2.7449999999999996e-05
+      }
+    },
+    {
+      "name": "writer",
+      "payload": {
+        "answer_length": 859,
+        "had_research": true,
+        "had_analysis": true,
+        "source_count": 5,
+        "input_tokens": 778,
+        "output_tokens": 214,
+        "cost_usd": 0.00024509999999999994
+      }
+    },
+    {
+      "name": "supervisor",
+      "payload": {
+        "decision": "critic",
+        "raw_llm_response": "critic",
+        "iteration": 4,
+        "input_tokens": 185,
+        "output_tokens": 1,
+        "cost_usd": 2.8349999999999998e-05
+      }
+    },
+    {
+      "name": "critic",
+      "payload": {
+        "review_length": 1368,
+        "input_tokens": 822,
+        "output_tokens": 342,
+        "cost_usd": 0.0003285
+      }
+    },
+    {
+      "name": "supervisor",
+      "payload": {
+        "decision": "done",
+        "raw_llm_response": "done",
+        "iteration": 5,
+        "input_tokens": 187,
+        "output_tokens": 1,
+        "cost_usd": 2.865e-05
+      }
+    },
+    {
+      "name": "workflow_done",
+      "payload": {
+        "iterations": 5,
+        "elapsed_seconds": 0.8436856999996962
+      }
+    },
+    {
+      "name": "workflow_complete",
+      "payload": {
+        "iterations": 5,
+        "total_seconds": 0.914,
+        "route_history": [
+          "researcher",
+          "analyst",
+          "writer",
+          "critic",
+          "done"
+        ],
+        "has_final_answer": true,
+        "error_count": 0
+      }
+    }
+  ],
+  "sources": [
+    {
+      "title": "From Local to Global: A GraphRAG Approach - Microsoft Research",
+      "url": "https://arxiv.org/abs/2404.16130",
+      "snippet": "GraphRAG uses knowledge graph generation and community summaries to answer global queries over entire text corpora, outperforming traditional RAG by 70% on comprehensiveness.",
+      "metadata": {
+        "source": "mock",
+        "topic": "graphrag"
+      }
+    },
+    {
+      "title": "GraphRAG: Unlocking LLM Discovery on Narrative Private Data",
+      "url": "https://www.microsoft.com/en-us/research/blog/graphrag/",
+      "snippet": "Microsoft's GraphRAG approach combines entity extraction, relationship mapping, and community detection to build hierarchical knowledge graphs from unstructured text.",
+      "metadata": {
+        "source": "mock",
+        "topic": "graphrag"
+      }
+    },
+    {
+      "title": "LangChain GraphRAG Integration",
+      "url": "https://python.langchain.com/docs/use_cases/graph/",
+      "snippet": "LangChain provides built-in support for knowledge graph construction and querying. Integration with Neo4j, Amazon Neptune, and other graph databases is supported.",
+      "metadata": {
+        "source": "mock",
+        "topic": "graphrag"
+      }
+    },
+    {
+      "title": "Knowledge Graphs for RAG - Neo4j Developer Guide",
+      "url": "https://neo4j.com/developer/rag/",
+      "snippet": "Neo4j enables graph-powered RAG pipelines. Entity extraction plus relationship modeling creates rich context for LLM generation beyond simple vector similarity search.",
+      "metadata": {
+        "source": "mock",
+        "topic": "graphrag"
+      }
+    },
+    {
+      "title": "Evaluation of GraphRAG vs Traditional RAG",
+      "url": "https://arxiv.org/abs/2405.12345",
+      "snippet": "Comparative evaluation shows GraphRAG excels at global/thematic queries but traditional RAG is more cost-effective for simple factual lookups. Indexing costs are 10-100x higher.",
+      "metadata": {
+        "source": "mock",
+        "topic": "graphrag"
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "state_snapshot": {
+    "research_notes_length": 1147,
+    "analysis_notes_length": 859,
+    "final_answer_length": 859,
+    "num_sources": 5,
+    "num_agent_results": 9
+  },
+  "benchmark": {
+    "run_name": "multi-agent",
+    "latency_seconds": 0.914,
+    "estimated_cost_usd": 0.0011837999999999998,
+    "quality_score": 8.0,
+    "notes": "5 iterations, 9 agent calls, 4706 tokens (in:3644 out:1062), 5 sources"
+  }
+}
