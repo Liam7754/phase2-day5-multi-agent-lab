@@ -1,3 +1,5 @@
+.claude
+venv/
 .venv/
 __pycache__/
 *.pyc
@@ -10,4 +12,5 @@ build/
 *.egg-info/
 reports/*.json
 reports/*.md
+logs/
 !.gitkeep
